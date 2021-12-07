@@ -1,4 +1,4 @@
-package com.example.customtoast;
+package com.example.toastexample;
 
 import org.junit.Test;
 
