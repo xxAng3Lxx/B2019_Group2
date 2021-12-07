@@ -1,0 +1,10 @@
+#Tue Dec 07 20:42:21 SGT 2021
+base.2=C\:\\Users\\admin\\Documents\\GitHub\\B2019_Group2\\Custom Toast\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+path.2=7/classes.dex
+base.1=C\:\\Users\\admin\\Documents\\GitHub\\B2019_Group2\\Custom Toast\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+path.1=0/classes.dex
+base.0=C\:\\Users\\admin\\Documents\\GitHub\\B2019_Group2\\Custom Toast\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex
