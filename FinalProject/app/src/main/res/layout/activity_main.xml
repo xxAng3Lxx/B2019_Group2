@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="#FFFFFF"
     tools:context=".activities.MainActivity">
 
     <TextView
@@ -17,7 +17,7 @@
         android:fontFamily="@font/poppinsbold"
         android:includeFontPadding="false"
         android:text="@string/my_notes"
-        android:textColor="#7575CF"
+        android:textColor="#6A6A6E"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -64,21 +64,20 @@
         android:id="@+id/notesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
+        android:background="#FAF7F7"
         android:clipToPadding="false"
         android:paddingStart="0dp"
         android:paddingEnd="@dimen/_12sdp"
         android:paddingBottom="@dimen/_12sdp"
         app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
         app:layout_constraintTop_toBottomOf="@id/layoutSearch"
-        />
+        tools:layout_editor_absoluteX="3dp" />
 
     <LinearLayout
         android:id="@+id/layoutQuickActions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorQuickActionsBackground"
+        android:background="@color/colorBack"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/_15sdp"
@@ -90,7 +89,7 @@
             android:layout_height="@dimen/_23sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_add_outline"
-            app:tint="@color/colorIcons" />
+            app:tint="@color/colorTextHint" />
 
         <ImageView
             android:id="@+id/imageAddImage"
@@ -99,7 +98,7 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_image"
-            app:tint="@color/colorIcons" />
+            app:tint="@color/colorTextHint" />
 
         <ImageView
             android:id="@+id/imageAddWebLink"
@@ -108,7 +107,7 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_web_link"
-            app:tint="@color/colorIcons" />
+            app:tint="@color/colorTextHint" />
 
     </LinearLayout>
 
@@ -121,7 +120,7 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
-        app:tint="@color/colorPrimary"
+        app:tint="@color/colorWhite"
         app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/layoutQuickActions"/>

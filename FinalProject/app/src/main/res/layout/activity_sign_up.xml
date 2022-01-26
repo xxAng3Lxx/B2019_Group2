@@ -22,8 +22,8 @@
             android:layout_marginTop="76dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center"
-            android:text="Regsiter"
-            android:textColor="#4CAF50"
+            android:text="Register"
+            android:textColor="@color/colorPastelViolet"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -137,15 +137,17 @@
 
         <Button
             android:id="@+id/buttonSignUp"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:text="Regsiter"
+            android:background="@color/colorPastelViolet"
+            android:text="Register"
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progress" />
+            app:layout_constraintTop_toBottomOf="@+id/progress"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/loginText"

@@ -85,7 +85,7 @@
 
             <ImageView
                 android:id="@+id/imageColor3"
-                android:layout_width="@dimen/_35sdp"
+                android:layout_width="38dp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
@@ -160,7 +160,7 @@
             android:layout_height="@dimen/_22sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_image"
-            app:tint="@color/colorIcons" />
+            app:tint="@color/colorWhite" />
 
         <TextView
             android:layout_width="match_parent"
@@ -169,7 +169,7 @@
             android:fontFamily="@font/ubuntumedium"
             android:includeFontPadding="false"
             android:text="@string/add_image"
-            android:textColor="@color/colorIcons"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/_12ssp" />
 
     </LinearLayout>
@@ -190,7 +190,7 @@
             android:layout_height="@dimen/_22sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_web_link"
-            app:tint="@color/colorIcons" />
+            app:tint="@color/colorWhite" />
 
         <TextView
             android:layout_width="match_parent"
@@ -199,7 +199,7 @@
             android:fontFamily="@font/ubuntumedium"
             android:includeFontPadding="false"
             android:text="@string/add_url"
-            android:textColor="@color/colorIcons"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/_12ssp" />
 
     </LinearLayout>

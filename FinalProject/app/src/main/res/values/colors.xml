@@ -18,13 +18,14 @@
     <color name="colorDefaultNoteColor">#FFFFFF</color>
     <color name="colorNoteSubtitleText">#FF000000</color>
     <color name="colorMiscellaneousBackground">#1F1F1F</color>
-    <color name="colorNoteColor2">#FDBE3B</color>
-    <color name="colorNoteColor3">#FF4842</color>
-    <color name="colorNoteColor4">#3A52FC</color>
-    <color name="colorNoteColor5">#000000</color>
+    <color name="colorNoteColor2">#E57F84</color>
+    <color name="colorNoteColor3">#54627B</color>
+    <color name="colorNoteColor4">#FEC84D</color>
+    <color name="colorNoteColor5">#9CA89E</color>
     <color name="colorDelete">#FF4842</color>
     <color name="colorSearchBackground">#333333</color>
     <color name="colorPastelViolet">#7575CF</color>
     <color name="colorSemiViolet">#E8DFF5</color>
+    <color name="colorBack">#AFC9D6</color>
 
 </resources>

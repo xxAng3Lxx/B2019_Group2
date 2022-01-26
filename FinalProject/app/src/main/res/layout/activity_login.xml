@@ -14,7 +14,7 @@
       android:fontFamily="@font/poppinsbold"
       android:gravity="center"
       android:text="Login"
-      android:textColor="#4CAF50"
+      android:textColor="@color/colorPastelViolet"
       android:textSize="30sp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
@@ -46,11 +46,10 @@
           android:id="@+id/username"
           android:layout_width="360dp"
           android:layout_height="50dp"
-          android:background="@drawable/custom_input"
+          android:hint="Username"
           android:drawableStart="@drawable/custom_username_icon"
           android:drawablePadding="15dp"
           android:fontFamily="@font/poppinsmedium"
-          android:hint="Username"
           android:paddingStart="12dp"
           android:paddingEnd="12dp"
           tools:targetApi="jelly_bean" />
@@ -71,11 +70,10 @@
           android:id="@+id/password"
           android:layout_width="360dp"
           android:layout_height="50dp"
-          android:background="@drawable/custom_input"
+          android:hint="Password"
           android:drawableStart="@drawable/custom_password_icon"
           android:drawablePadding="15dp"
           android:fontFamily="@font/poppinsmedium"
-          android:hint="Password"
           android:inputType="textPassword"
           android:paddingStart="12dp"
           android:paddingEnd="12dp"
@@ -93,14 +91,16 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@color/colorPastelViolet"
         android:text="login"
+        android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress" />
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/signUpText"

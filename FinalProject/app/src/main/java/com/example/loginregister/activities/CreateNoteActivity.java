@@ -23,6 +23,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +42,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -57,11 +60,16 @@ public class CreateNoteActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
     private static final int REQUEST_CODE_SELECT_IMAGE = 2;
+    private static final int RECOGNIZER_RESULT = 3; // pag may error palitan to ng 3
 
     private AlertDialog dialogAddURL;
     private AlertDialog dialogDeleteNote;
 
     private Note alreadyAvailableNote;
+
+    TextToSpeech tts;
+
+    ImageView imageSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +97,41 @@ public class CreateNoteActivity extends AppCompatActivity {
                 new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm a", Locale.getDefault())
                 .format(new Date())
         );
+
+        // Text To Speech Code
+        ImageView imageSpeak = findViewById(R.id.imageSpeak);
+        imageSpeak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                    @Override
+                    public void onInit(int i) {
+                        if (i == TextToSpeech.SUCCESS) {
+                            tts.setLanguage(Locale.getDefault());
+                            tts.setSpeechRate(1.0f);
+                            tts.speak(inputNoteTitle.getText().toString(), TextToSpeech.QUEUE_ADD, null);
+                            tts.speak(inputNoteSubtitle.getText().toString(), TextToSpeech.QUEUE_ADD, null);
+                            tts.speak(inputNoteText.getText().toString(), TextToSpeech.QUEUE_ADD, null);
+                        }
+
+                    }
+                });
+
+            }
+        });
+
+        // Speech To Text Code
+        imageSpeech = findViewById(R.id.imageSpeech);
+        imageSpeech.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent speechIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                speechIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                speechIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speech to text");
+                startActivityForResult(speechIntent, RECOGNIZER_RESULT);
+            }
+        });
+
 
         ImageView imageSave = findViewById(R.id.imageSave);
         imageSave.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +186,9 @@ public class CreateNoteActivity extends AppCompatActivity {
         setSubtitleIndicatorColor();
 
     }
+    
+    
+
 
     private void setViewOrUpdateNote() {
         inputNoteTitle.setText(alreadyAvailableNote.getTitle());
@@ -247,7 +293,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#FDBE3B";
+                selectedNoteColor = "#E57F84";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(R.drawable.ic_done);
                 imageColor3.setImageResource(0);
@@ -261,7 +307,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#FF4842";
+                selectedNoteColor = "#54627B";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(0);
                 imageColor3.setImageResource(R.drawable.ic_done);
@@ -275,7 +321,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#3A52FC";
+                selectedNoteColor = "#FEC84D";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(0);
                 imageColor3.setImageResource(0);
@@ -289,7 +335,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#000000";
+                selectedNoteColor = "#9CA89E";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(0);
                 imageColor3.setImageResource(0);
@@ -302,16 +348,16 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         if (alreadyAvailableNote != null && alreadyAvailableNote.getColor() != null && !alreadyAvailableNote.getColor().trim().isEmpty()) {
             switch (alreadyAvailableNote.getColor()) {
-                case "#FDBE3B":
+                case "#E57F84":
                     layoutMiscellaneous.findViewById(R.id.viewColor2).performClick();
                     break;
-                case "#FF4842":
+                case "#54627B":
                     layoutMiscellaneous.findViewById(R.id.viewColor3).performClick();
                     break;
-                case "#3A52FC":
+                case "#FEC84D":
                     layoutMiscellaneous.findViewById(R.id.viewColor4).performClick();
                     break;
-                case "#000000":
+                case "#9CA89E":
                     layoutMiscellaneous.findViewById(R.id.viewColor5).performClick();
                     break;
             }
@@ -442,6 +488,13 @@ public class CreateNoteActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        //Speech to Text
+        if (requestCode == RECOGNIZER_RESULT && resultCode == RESULT_OK){
+            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            inputNoteText.setText(matches.get(0).toString());
+        }
+
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_SELECT_IMAGE && resultCode == RESULT_OK) {
             if (data != null) {
@@ -523,6 +576,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
 
         dialogAddURL.show();
+
     }
 
 }
