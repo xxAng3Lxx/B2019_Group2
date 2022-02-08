@@ -51,5 +51,9 @@
             android:theme="@style/Theme.Design.Light.NoActionBar"
              />
 
+<<<<<<< Updated upstream
     </application>
+=======
+
+>>>>>>> Stashed changes
 </manifest>
