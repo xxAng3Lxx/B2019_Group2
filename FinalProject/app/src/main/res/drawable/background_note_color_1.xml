@@ -6,7 +6,7 @@
         <shape android:shape="oval">
             <stroke
                 android:width="@dimen/_2sdp"
-                android:color="@color/colorDefaultNoteColor" />
+                android:color="@color/colorNoteColor1" />
         </shape>
 
     </item>
@@ -20,7 +20,7 @@
         <shape android:shape="oval">
             <stroke
                 android:width="@dimen/_6sdp"
-                android:color="@color/colorBack" />
+                android:color="@color/colorMiscellaneousBackground" />
         </shape>
 
     </item>
@@ -32,7 +32,7 @@
         android:top="@dimen/_6sdp">
 
         <shape android:shape="oval">
-            <solid android:color="@color/colorDefaultNoteColor" />
+            <solid android:color="@color/colorNoteColor1" />
         </shape>
 
     </item>

@@ -4,8 +4,8 @@
     android:id="@+id/layoutNote"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/_12sdp"
-    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
     android:background="@drawable/background_note"
     android:orientation="vertical">
 
@@ -25,9 +25,9 @@
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_8sdp"
-        android:fontFamily="@font/ubuntubold"
+        android:fontFamily="@font/poppinsbold"
         android:includeFontPadding="false"
-        android:textColor="@color/colorPastelViolet"
+        android:textColor="#4E4E50"
         android:textSize="@dimen/_13ssp" />
 
     <TextView
@@ -38,9 +38,9 @@
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_4sdp"
         android:layout_marginBottom="@dimen/_4sdp"
-        android:fontFamily="@font/ubunturegular"
+        android:fontFamily="@font/poppinsmedium"
         android:includeFontPadding="false"
-        android:textColor="@color/colorNoteSubtitleText"
+        android:textColor="#4E4E50"
         android:textSize="@dimen/_12ssp" />
     
     <TextView
@@ -50,9 +50,9 @@
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_8sdp"
-        android:fontFamily="@font/ubunturegular"
+        android:fontFamily="@font/poppinsmedium"
         android:includeFontPadding="false"
-        android:textColor="@color/colorNoteSubtitleText"/>
+        android:textColor="#4E4E50"/>
 
 
 </LinearLayout>

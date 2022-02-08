@@ -19,12 +19,14 @@ public class SignUp extends AppCompatActivity {
     TextInputEditText textInputEditTextFullname, textInputEditTextUsername, textInputEditTextPassword, textInputEditTextEmail;
     Button buttonSignUp;
     TextView textViewLogin;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        
+        progress();
 
         textInputEditTextFullname = findViewById(R.id.fullname);
         textInputEditTextUsername = findViewById(R.id.username);
@@ -32,7 +34,6 @@ public class SignUp extends AppCompatActivity {
         textInputEditTextEmail = findViewById(R.id.email);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         textViewLogin = findViewById(R.id.loginText);
-        progressBar = findViewById(R.id.progress);
 
         textViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +57,7 @@ public class SignUp extends AppCompatActivity {
 
                     //Start ProgressBar first (Set visibility VISIBLE)
                     Handler handler = new Handler();
-                    handler.post(new Runnable() {
+                    handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             String[] field = new String[4];
@@ -85,7 +86,7 @@ public class SignUp extends AppCompatActivity {
                                 }
                             }
                         }
-                    });
+                    }, 3000);
                 } else {
                     Toast.makeText(getApplicationContext(), "All fields are required!", Toast.LENGTH_SHORT).show();
 
@@ -96,6 +97,10 @@ public class SignUp extends AppCompatActivity {
         });
 
 
+    }
+
+    private void progress() {
+        this.progressBar = findViewById(R.id.progress);
     }
 }
 

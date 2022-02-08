@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#4CAF50</color>
-    <color name="purple_500">#4CAF50</color>
-    <color name="purple_700">#4CAF50</color>
-    <color name="teal_200">#4CAF50</color>
-    <color name="teal_700">#4CAF50</color>
+   <color name="purple_200">#7575CF</color>
+    <color name="purple_500">#7575CF</color>
+    <color name="purple_700">#7575CF</color>
+    <color name="teal_200">#7575CF</color>
+    <color name="teal_700">#7575CF</color>
     <color name="black">#FF000000</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorPrimary">#292929</color>
+    <color name="colorPrimary">#7575CF</color>
     <color name="colorPrimaryDark">#292929</color>
     <color name="colorAccent">#FDBE3B</color>
     <color name="colorSearchIcon">#DBDBDB</color>
@@ -18,14 +18,17 @@
     <color name="colorDefaultNoteColor">#FFFFFF</color>
     <color name="colorNoteSubtitleText">#FF000000</color>
     <color name="colorMiscellaneousBackground">#1F1F1F</color>
-    <color name="colorNoteColor2">#E57F84</color>
-    <color name="colorNoteColor3">#54627B</color>
+    <color name="colorNoteColor1">#F4F4F4</color>
+    <color name="colorNoteColor2">#EEA8AC</color>
+    <color name="colorNoteColor3">#CDBFEB</color>
     <color name="colorNoteColor4">#FEC84D</color>
-    <color name="colorNoteColor5">#9CA89E</color>
+    <color name="colorNoteColor5">#AFC9D6</color>
     <color name="colorDelete">#FF4842</color>
     <color name="colorSearchBackground">#333333</color>
     <color name="colorPastelViolet">#7575CF</color>
     <color name="colorSemiViolet">#E8DFF5</color>
     <color name="colorBack">#AFC9D6</color>
+    <color name="mildViolet">#CDBFEB</color>
+    <color name="searchBar">#E8E6E6</color>
 
 </resources>

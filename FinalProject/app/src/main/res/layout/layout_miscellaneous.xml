@@ -14,10 +14,10 @@
         android:id="@+id/textMiscellaneous"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:fontFamily="@font/ubuntumedium"
+        android:fontFamily="@font/poppinsbold"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:text="@string/miscellaneous"
+        android:text="@string/others"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/_13ssp" />
 
@@ -138,11 +138,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntumedium"
+            android:fontFamily="@font/poppinsmedium"
             android:includeFontPadding="false"
             android:text="@string/pick_a_color"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_13ssp"/>
+            android:textSize="@dimen/_12ssp"/>
 
     </LinearLayout>
 
@@ -166,39 +166,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:fontFamily="@font/ubuntumedium"
+            android:fontFamily="@font/poppinsmedium"
             android:includeFontPadding="false"
             android:text="@string/add_image"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_12ssp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutAddUrl"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_web_link"
-            app:tint="@color/colorWhite" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:fontFamily="@font/ubuntumedium"
-            android:includeFontPadding="false"
-            android:text="@string/add_url"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_12ssp" />
 

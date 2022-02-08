@@ -9,12 +9,17 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Person;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.media.AsyncPlayer;
@@ -26,6 +31,7 @@ import android.provider.MediaStore;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.util.Patterns;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +46,8 @@ import com.example.loginregister.database.NotesDatabase;
 import com.example.loginregister.entities.Note;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -70,6 +78,10 @@ public class CreateNoteActivity extends AppCompatActivity {
     TextToSpeech tts;
 
     ImageView imageSpeech;
+    ImageView imageText;
+
+    Bitmap bitmap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +102,6 @@ public class CreateNoteActivity extends AppCompatActivity {
         textDateTime = findViewById(R.id.textDateTime);
         viewSubtitleIndicator = findViewById(R.id.viewSubtitleIndicator);
         imageNote = findViewById(R.id.imageNote);
-        textWebURL = findViewById(R.id.textWebURL);
         layoutWebURL = findViewById(R.id.layoutWebURL);
 
         textDateTime.setText(
@@ -103,6 +114,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         imageSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
                     @Override
                     public void onInit(int i) {
@@ -132,6 +144,9 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         });
 
+        // Text Recognition
+        imageText = findViewById(R.id.imageText);
+
 
         ImageView imageSave = findViewById(R.id.imageSave);
         imageSave.setOnClickListener(new View.OnClickListener() {
@@ -149,13 +164,6 @@ public class CreateNoteActivity extends AppCompatActivity {
             setViewOrUpdateNote();
         }
 
-        findViewById(R.id.imageRemoveWebURL).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                textWebURL.setText(null);
-                layoutWebURL.setVisibility(View.GONE);
-            }
-        });
 
         findViewById(R.id.imageRemoveImage).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,8 +194,6 @@ public class CreateNoteActivity extends AppCompatActivity {
         setSubtitleIndicatorColor();
 
     }
-    
-    
 
 
     private void setViewOrUpdateNote() {
@@ -279,7 +285,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#FFFFFF";
+                selectedNoteColor = "#F4F4F4";
                 imageColor1.setImageResource(R.drawable.ic_done);
                 imageColor2.setImageResource(0);
                 imageColor3.setImageResource(0);
@@ -293,7 +299,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#E57F84";
+                selectedNoteColor = "#EEA8AC";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(R.drawable.ic_done);
                 imageColor3.setImageResource(0);
@@ -307,7 +313,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#54627B";
+                selectedNoteColor = "#CDBFEB";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(0);
                 imageColor3.setImageResource(R.drawable.ic_done);
@@ -335,7 +341,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         layoutMiscellaneous.findViewById(R.id.viewColor5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedNoteColor = "#9CA89E";
+                selectedNoteColor = "#AFC9D6";
                 imageColor1.setImageResource(0);
                 imageColor2.setImageResource(0);
                 imageColor3.setImageResource(0);
@@ -348,16 +354,16 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         if (alreadyAvailableNote != null && alreadyAvailableNote.getColor() != null && !alreadyAvailableNote.getColor().trim().isEmpty()) {
             switch (alreadyAvailableNote.getColor()) {
-                case "#E57F84":
+                case "#EEA8AC":
                     layoutMiscellaneous.findViewById(R.id.viewColor2).performClick();
                     break;
-                case "#54627B":
+                case "#CDBFEB":
                     layoutMiscellaneous.findViewById(R.id.viewColor3).performClick();
                     break;
                 case "#FEC84D":
                     layoutMiscellaneous.findViewById(R.id.viewColor4).performClick();
                     break;
-                case "#9CA89E":
+                case "#AFC9D6":
                     layoutMiscellaneous.findViewById(R.id.viewColor5).performClick();
                     break;
             }
@@ -378,14 +384,6 @@ public class CreateNoteActivity extends AppCompatActivity {
                 } else {
                     selectImage();
                 }
-            }
-        });
-
-        layoutMiscellaneous.findViewById(R.id.layoutAddUrl).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                showAddURLDialog();
             }
         });
 
@@ -476,6 +474,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
         if (requestCode == REQUEST_CODE_STORAGE_PERMISSION && grantResults.length > 0) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 selectImage();
@@ -496,6 +495,12 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
 
         super.onActivityResult(requestCode, resultCode, data);
+
+
+        // Text Recognition
+
+
+
         if (requestCode == REQUEST_CODE_SELECT_IMAGE && resultCode == RESULT_OK) {
             if (data != null) {
                 Uri selectedImageUri = data.getData();
@@ -518,6 +523,8 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         }
     }
+
+
 
     private String getPathFromUri(Uri contentUri){
         String filePath;

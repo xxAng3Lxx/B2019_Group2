@@ -20,17 +20,18 @@ public class Login extends AppCompatActivity {
     TextInputEditText textInputEditTextUsername, textInputEditTextPassword;
     Button buttonLogin;
     TextView textViewSignUp;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        progress();
+
         textInputEditTextUsername = findViewById(R.id.username);
         textInputEditTextPassword = findViewById(R.id.password);
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewSignUp = findViewById(R.id.signUpText);
-        progressBar = findViewById(R.id.progress);
 
         textViewSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,7 @@ public class Login extends AppCompatActivity {
 
                     //Start ProgressBar first (Set visibility VISIBLE)
                     Handler handler = new Handler();
-                    handler.post(new Runnable() {
+                    handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             String[] field = new String[2];
@@ -82,7 +83,7 @@ public class Login extends AppCompatActivity {
                                 }
                             }
                         }
-                    });
+                    }, 3000);
                 } else {
                     Toast.makeText(getApplicationContext(), "All fields are required!", Toast.LENGTH_SHORT).show();
 
@@ -92,5 +93,10 @@ public class Login extends AppCompatActivity {
 
         });
 
+    }
+
+    private void progress() {
+
+        this.progressBar = findViewById(R.id.progress);
     }
 }

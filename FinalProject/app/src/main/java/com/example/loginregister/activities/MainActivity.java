@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.loginregister.Login;
 import com.example.loginregister.R;
 import com.example.loginregister.adapters.NotesAdapter;
 import com.example.loginregister.database.NotesDatabase;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
 
     private AlertDialog dialogAddURL;
 
+    ImageView logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,17 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
                         new Intent(getApplicationContext(), CreateNoteActivity.class),
                         REQUEST_CODE_ADD_NOTE
                 );
+            }
+        });
+
+        logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentL = new Intent(MainActivity.this, Login.class);
+                startActivity(intentL);
+                finish();
+                Toast.makeText(MainActivity.this,"Successfully Logout",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -99,40 +113,6 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
                 if (noteList.size() != 0) {
                     notesAdapter.searchNotes(editable.toString());
                 }
-            }
-        });
-
-        findViewById(R.id.imageAddNote).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivityForResult(
-                        new Intent(getApplicationContext(), CreateNoteActivity.class),
-                        REQUEST_CODE_ADD_NOTE
-                );
-            }
-        });
-
-        findViewById(R.id.imageAddImage).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(
-                        getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE
-                ) != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(
-                            MainActivity.this,
-                            new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
-                            REQUEST_CODE_STORAGE_PERMISSION
-                    );
-                } else {
-                    selectImage();
-                }
-            }
-        });
-
-        findViewById(R.id.imageAddWebLink).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showAddURLDialog();
             }
         });
 

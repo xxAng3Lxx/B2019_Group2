@@ -33,6 +33,20 @@
                 app:tint="@color/colorIcons" />
 
             <ImageView
+                android:id="@+id/imageText"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="100dp"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_text"
+                app:layout_constraintBottom_toBottomOf="@id/imageBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageBack"
+                app:layout_constraintVertical_bias="0.0"
+                app:tint="@color/colorIcons" />
+
+            <ImageView
                 android:id="@+id/imageSpeak"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
@@ -68,7 +82,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
-                android:fontFamily="@font/ubuntubold"
+                android:fontFamily="@font/poppinsbold"
                 android:hint="@string/note_title"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
@@ -83,7 +97,7 @@
                 android:id="@+id/textDateTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ubunturegular"
+                android:fontFamily="@font/poppinsmedium"
                 android:includeFontPadding="false"
                 android:textColor="@color/colorIcons"
                 android:textSize="@dimen/_10ssp"
@@ -99,7 +113,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
-                android:fontFamily="@font/ubuntumedium"
+                android:fontFamily="@font/poppinsmedium"
                 android:hint="@string/note_subtitle"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -164,36 +178,17 @@
                 app:layout_constraintTop_toBottomOf="@id/imageNote"
                 tools:ignore="UseCompoundDrawables">
 
-                <TextView
-                    android:id="@+id/textWebURL"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:autoLink="web"
-                    android:fontFamily="@font/ubunturegular"
-                    android:includeFontPadding="false"
-                    android:textSize="@dimen/_13ssp" />
-
-                <ImageView
-                    android:id="@+id/imageRemoveWebURL"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/ic_delete"
-                    app:tint="@color/colorDelete" />
-
             </LinearLayout>
 
             <EditText
                 android:id="@+id/inputNote"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/_250sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:background="@null"
-                android:fontFamily="@font/ubunturegular"
+                android:fontFamily="@font/poppinsmedium"
                 android:gravity="top"
                 android:hint="@string/type_a_note_here"
                 android:importantForAutofill="no"
@@ -202,24 +197,25 @@
                 android:minHeight="@dimen/_100sdp"
                 android:textColor="@color/colorTextHint"
                 android:textColorHint="@color/colorTextHint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutWebURL" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutWebURL"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/imageSpeech"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="108dp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_4sdp"
                 android:src="@drawable/ic_speech"
-                app:layout_constraintBottom_toBottomOf="@+id/inputNote"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/inputNote"
-                app:layout_constraintTop_toTopOf="@+id/inputNote"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/inputNote"
                 app:tint="@color/colorIcons" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
