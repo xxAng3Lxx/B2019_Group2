@@ -20,7 +20,7 @@
         <shape android:shape="oval">
             <stroke
                 android:width="@dimen/_6sdp"
-                android:color="@color/colorMiscellaneousBackground" />
+                android:color="@color/colorBack" />
         </shape>
 
     </item>

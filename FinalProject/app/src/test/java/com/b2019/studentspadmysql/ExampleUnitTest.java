@@ -1,4 +1,4 @@
-package com.example.loginregister;
+package com.b2019.studentspadmysql;
 
 import org.junit.Test;
 

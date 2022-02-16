@@ -1,4 +1,4 @@
-package com.example.loginregister;
+package com.b2019.studentspadmysql;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.loginregister", appContext.getPackageName());
+        assertEquals("com.b2019.studentspadmysql", appContext.getPackageName());
     }
 }
