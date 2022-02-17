@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutNote"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:background="#FAF7F7"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/_12sdp">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:riv_corner_radius_top_left="@dimen/_10sdp"
+        app:riv_corner_radius_top_right="@dimen/_10sdp" />
+
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id Laundry"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_note_title"
+        android:text="Note Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/poppinsbold"
+        android:includeFontPadding="false"
+        android:textColor="#4E4E50"
+        android:textSize="@dimen/_13ssp"
+        />
+
+    <TextView
+        android:id="@+id/tv_note_sub"
+        android:text="Note Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:fontFamily="@font/poppinsmedium"
+        android:includeFontPadding="false"
+        android:textColor="#4E4E50"
+        android:textSize="@dimen/_12ssp"
+        />
+
+    <TextView
+        android:id="@+id/tv_note_text"
+        android:text="@string/type_a_note_here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:fontFamily="@font/poppinsmedium"
+        android:includeFontPadding="false"
+        android:textColor="#4E4E50"
+        />
+
+</LinearLayout>

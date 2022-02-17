@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/drawable/ic_logout.xml" value="0.21203703703703702" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/activity_insert.xml" value="0.22314814814814815" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/activity_sign_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/activity_update.xml" value="0.25364583333333335" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/card_item.xml" value="0.22314814814814815" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/item_container_note.xml" value="0.22314814814814815" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/layout/text_recog.xml" value="0.22314814814814815" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/FINAL PROJECT BS2019 BSCS/StudentsPadMySQL/app/src/main/res/menu/menu_main.xml" value="0.22314814814814815" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/drawable/background_add_button.xml" value="0.1" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/drawable/background_note_color_2.xml" value="0.1" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/activity_insert.xml" value="0.22992700729927007" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/activity_update.xml" value="0.1" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/card_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/item_container_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/StudentsPadMySQL/app/src/main/res/layout/text_recog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/drawable/background_add_button.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/drawable/background_note.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/drawable/ic_add.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/drawable/progressbar_color.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/activity_insert.xml" value="0.25" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/activity_login.xml" value="0.209375" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/activity_sign_up.xml" value="0.209375" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/activity_update.xml" value="0.25" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/card_item.xml" value="0.209375" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/item_container_note.xml" value="0.209375" />
+        <entry key="..\:/Users/admin/Downloads/StudentsPadMySQL-20220214T160659Z-001/StudentsPadMySQL/app/src/main/res/layout/text_recog.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

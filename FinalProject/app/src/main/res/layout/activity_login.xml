@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".listeners.Login">
+
+
+  <ImageView
+      android:id="@+id/appLogo"
+      android:layout_width="@dimen/_215sdp"
+      android:layout_height="@dimen/_200sdp"
+      android:layout_marginTop="64dp"
+      android:src="@drawable/app_logo"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.645">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutUsername"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/username"
+          android:layout_width="320dp"
+          android:layout_height="50dp"
+          android:drawableStart="@drawable/custom_username_icon"
+          android:drawablePadding="15dp"
+          android:fontFamily="@font/poppinsmedium"
+          android:hint="Username"
+          android:textColorHint="@color/colorSemiViolet"
+          android:paddingStart="12dp"
+          android:paddingEnd="12dp"
+          tools:targetApi="jelly_bean" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPassword"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUsername">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/password"
+          android:layout_width="320dp"
+          android:layout_height="50dp"
+          android:drawableStart="@drawable/custom_password_icon"
+          android:drawablePadding="15dp"
+          android:fontFamily="@font/poppinsmedium"
+          android:hint="Password"
+          android:textColorHint="@color/colorSemiViolet"
+          android:inputType="textPassword"
+          android:paddingStart="12dp"
+          android:paddingEnd="12dp"
+          tools:targetApi="jelly_bean" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyle"
+        android:indeterminateDrawable="@drawable/progressbar_color"
+        android:indeterminateDuration="@android:integer/config_longAnimTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/background_login_and_signup_button"
+        android:text="Login"
+        android:fontFamily="@font/poppinsmedium"
+        android:textColor="@color/colorPastelViolet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Create a new account? Register here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        tools:targetApi="jelly_bean" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
